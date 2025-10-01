@@ -1,0 +1,46 @@
+# Trading Bot Configuration Template
+# Copy this file and customize for each bot instance
+
+bot_name: "TradingBot_Account1"
+webhook_port: 5000
+
+# IBKR Configuration
+ibkr:
+  host: "127.0.0.1"
+  port: 7497  # 7497 for TWS, 4002 for IB Gateway
+  client_id: 1  # Unique ID for each bot instance
+  account: ""  # Your IBKR account number
+  
+# Trading Settings
+trading:
+  default_quantity: 100
+  max_position_size: 1000
+  enable_pre_market: true
+  enable_post_market: true
+  limit_order_timeout_minutes: 5  # Resubmit after this time
+  max_resubmissions: 3
+  
+# Market Hours (Eastern Time)
+market_hours:
+  pre_market_start: "04:00"
+  market_open: "09:30"
+  market_close: "16:00"
+  post_market_end: "20:00"
+
+# Telegram Notifications
+telegram:
+  enabled: true
+  bot_token: ""  # Your Telegram bot token
+  chat_id: ""    # Your Telegram chat ID
+  
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file_path: "logs/trading_bot.log"
+  max_file_size_mb: 10
+  backup_count: 5
+
+# Security
+security:
+  webhook_secret: ""  # Optional webhook authentication
+  allowed_ips: []     # Empty list allows all IPs
